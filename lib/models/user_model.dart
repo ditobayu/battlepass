@@ -1,18 +1,18 @@
 class UserModel {
-  final int? id;
+  final String? nim;
   final String? name;
   final String? password;
   final String? salt;
 
   UserModel({
-    this.id,
+    this.nim,
     this.name,
     this.password,
     this.salt,
   });
 
   factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
-        id: json['id'],
+        nim: json['id'],
         name: json['name'],
         password: json['password'],
         salt: json['salt'],

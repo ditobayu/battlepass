@@ -8,6 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:raion_battlepass/blocs/bloc/auth_bloc.dart';
 import 'package:raion_battlepass/models/sign_in_form_model.dart';
+import 'package:raion_battlepass/shared/shared_method.dart';
+import 'package:raion_battlepass/shared/theme.dart';
 import 'package:raion_battlepass/ui/widget/buttons.dart';
 import 'package:raion_battlepass/ui/widget/custom_form_field.dart';
 
@@ -35,7 +37,7 @@ class _SignInPageState extends State<SignInPage> {
       body: BlocConsumer<AuthBloc, AuthState>(
         listener: (context, state) {
           if (state is AuthFailed) {
-            // showCustomSnackbar(context, state.e);
+            showCustomSnackbar(context, state.e);
           } else if (state is AuthSuccess) {
             Navigator.pushNamedAndRemoveUntil(
                 context, '/home', (route) => false);
@@ -64,8 +66,8 @@ class _SignInPageState extends State<SignInPage> {
               ),
               Text(
                 "Sign In &\nGrow Your Finance",
-                // style:
-                // blackTextStyle.copyWith(fontSize: 20, fontWeight: semiBold),
+                style:
+                    blackTextStyle.copyWith(fontSize: 20, fontWeight: semiBold),
               ),
               const SizedBox(
                 height: 30,
@@ -100,7 +102,7 @@ class _SignInPageState extends State<SignInPage> {
                       alignment: Alignment.centerRight,
                       child: Text(
                         "Forgot Password",
-                        // style: blueTextStyle,
+                        style: blueTextStyle,
                       ),
                     ),
                     const SizedBox(
@@ -118,8 +120,8 @@ class _SignInPageState extends State<SignInPage> {
                                 ),
                               );
                         } else {
-                          // showCustomSnackbar(
-                          //     context, "Semau field harus diisi");
+                          showCustomSnackbar(
+                              context, "Semau field harus diisi");
                         }
                       },
                     ),

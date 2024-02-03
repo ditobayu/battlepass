@@ -21,7 +21,7 @@ class AuthFailed extends AuthState {
 }
 
 class AuthSuccess extends AuthState {
-  final SignUpFormModel user;
+  final UserModel user;
 
   const AuthSuccess(this.user);
 
